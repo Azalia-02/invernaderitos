@@ -16,9 +16,7 @@ return new class extends Migration
             $table->string('nombre', 50);
             $table->string('apellido', 50);
             $table->string('email', 20);
-            $table->string('passwordu', 8); //Contraseña usuario
-            $table->string('passworda', 8);//Contraseña administrador
-            $table->integer('rol');
+            $table->string('password');
             $table->tinyInteger('blocked');
             $table->timestamps();
         });

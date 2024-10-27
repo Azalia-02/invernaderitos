@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ControladorLogin;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::name('login')->get('/login',[ControladorLogin::class, 'login']);
+Route::name('login_alta')->get('/login_alta',[ControladorLogin::class, 'login_alta']);
+Route::name('login_registrar')->post('/login_registrar',[ControladorLogin::class, 'login_registrar']);
