@@ -15,6 +15,5 @@ class Login extends Model
         'apellido',
         'email',
         'password',
-        'blocked',
     ];
 }

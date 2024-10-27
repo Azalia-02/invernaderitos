@@ -15,9 +15,8 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->string('nombre', 50);
             $table->string('apellido', 50);
-            $table->string('email', 20);
+            $table->string('email');
             $table->string('password');
-            $table->tinyInteger('blocked');
             $table->timestamps();
         });
     }

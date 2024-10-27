@@ -13,14 +13,15 @@ return new class extends Migration
     {
         Schema::create('tb_personal', function (Blueprint $table) {
             $table->bigIncrements('id_personal');
-            $table->string('nombre', 50);
-            $table->string('app', 50);//Apellido paterno
-            $table->string('apm', 20);//Apellido materno
-            $table->string('telefono', 8);
-            $table->string('email', 8);
-            $table->string('curp', 8); 
-            $table->string('rfc', 8);
-            $table->string('cargo', 8);
+            $table->string('nombre');
+            $table->string('app');//Apellido paterno
+            $table->string('apm');//Apellido materno
+            $table->string('telefono');
+            $table->string('email');
+            $table->string('curp'); 
+            $table->string('rfc');
+            $table->string('cargo');
+            $table->text('foto')->nullable();
             $table->timestamps();
         });
     }

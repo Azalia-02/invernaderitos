@@ -29,8 +29,7 @@ class ControladorLogin extends Controller
             'nombre' => $request->input('nombre'),
             'apellido' => $request->input('apellido'),
             'email' => $request->input('email'),
-            'password' => $request->input('password'),
-            'blocked' => $request->input('blocked')
+            'password' => $request->input('password')
         ));
 
         return redirect()->route('login');
