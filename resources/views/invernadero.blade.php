@@ -4,12 +4,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href=" {{ asset('css/estilos.css') }}">
-        <title>Lista de Personal</title>
-        
+        <title>Lista de Invernaderos</title>
+        <script src="{{url('js/bootstrap.bundle.min.js')}}"></script></head>
 
         <body>
         <div id="encabezado">
-        <a href="{{ route('personal_alta') }}">
         <img src="{{ 'img/dino.jpg' }}" alt="logo empresa" id="imgenbn">
         </a>
         <nav class="menu">
@@ -35,40 +34,53 @@
     <br>
         <div style=" float: inline-start; position: relative;  width: 100%; height: 250px; padding: 2px;">
 <div class="container">
-    <br><br>
-    <br>
-    <h3>Administración de registro de personal</h3>
+    
+    <form action="{{ route('invernadero') }}" method="GET" enctype="multipart/form-data">
+            {{ csrf_field() }}
+            <div class="form-floating mb-3">
+                <input type="input" class="form-control" name="buscar" value="{{ old('buscar') }}" id="floatingBuscar" 
+                    placeholder="ejemplo: Invernadero túnel" aria-describedby="buscarHelp">
+                <div id="buscarHelp" class="form-text">@if($errors->first('buscar')) <i>El campo Buscar no es correcto!!!</i> @endif</div>
+            </div>
+            <button type="submit" class="btn btn-primary">Buscar</button>
+            <a href="{{ route('invernadero') }}">
+                <button type="button" class="btn btn-danger">Reiniciar</button>
+            </a>
+        </form>
+        <br>
+    <h3>Administración de registro de invernaderos</h3>
     <h5>Tabla de registro</h5>
     <hr>
     <p style="text-align: right;">
-        <a href="{{ route('personal_alta') }}">
+        <a href="{{ route('invernadero_alta') }}">
             <button type="button" class="boton">Nuevo Registro</button>
 </a>
 </p>
-<hr><br>
+
 <table class="table">
     <tr>
         <th>Foto</th>
         <th>N°</th>
-        <th>Nombre</th>
-        <th>Apellido</th>
+        <th>Tipo</th>
+        <th>Descripción</th>
         <th>Editar</th>
         <th>Eliminar</th>
     
 </tr>
-@foreach($personal as $personales)
+@foreach($invernadero as $key=>$invernaderos)
 <tr>
-    <td><img src="{{ 'img/' . $personales->foto }}" style="width: 30px; height: 30px;"></td>
-    <td>{{ $personales->id_personal }}</td>
-    <td>{{ $personales->nombre }}</td>
-    <td>{{ $personales->app }}</td>
-    <td><a href="{{ route('personal_editar', $personales->id_personal) }}">
+    <td><img src="{{ 'img/' . $invernaderos->imagen }}" style="width: 30px; height: 30px;"></td>
+    <td>{{ $invernaderos->id_invernadero }}</td>
+    <td>{{ $invernaderos->tipo }}</td>
+    <td>{{ $invernaderos->descripcion }}</td>
+    
+    <td><a href="{{ route('invernadero_editar', $invernaderos->id_invernadero) }}">
             <button type="button" class="boton2">Editar</button>
 </a></td>
-<td><a href="{{ route('personal_borrar', $personales->id_personal) }}">
+<td><a href="{{ route('invernadero_borrar', $invernaderos->id_invernadero) }}">
             <button type="button" class="boton2">Eliminar</button>
 </a></td>
-<td><a href="{{ route('personal_detalle', $personales->id_personal) }}">
+<td><a href="{{ route('invernadero_detalle', $invernaderos->id_invernadero) }}">
             <button type="button" class="boton2">Consultar</button>
 </a></td>
 </tr>

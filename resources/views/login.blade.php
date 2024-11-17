@@ -8,26 +8,36 @@
     </head>
 <body>
     <div id="encabezado">
-        <a href="login.html">
-        <img src="{{ 'img/dino.jpg' }}" alt="logo empresa" id="imgenbn">
+        <a href="{{ route('login') }}">
+        <img src="{{ asset('img/dino.jpg') }}" alt="logo empresa" id="imgenbn">
         </a>
         <nav class="menu">
             <ul>
-                <li><a href="contactanos.html">Contactanos</a></li>
-                <li><a href="login.html">Ingresa</a></li>
+                <li><a href="{{ route('contactanos') }}">Contactanos</a></li>
+                <li><a href="{{ route('login') }}" class="active">Ingresa</a></li>
             </ul>
         </nav>
     </div>
     <br>
     <div id="cuerpo">
         <center>
-        <form  method="post" action="val.php">
+        <form  action="{{ route('login_aceptar') }}" method="POST" enctype="multipart/form-data">
+            @csrf
             <h2>Bienvenido</h2>
             <label for="username">Ingresa tu correo</label>
-            <input type="text" id="usernamec" name="usernamec" required placeholder="Ingresa tu correo">
+            <input type="email" id="email" name="email" required placeholder="Ingresa tu correo">
             <label for="password">Ingresa tu contraseña</label>
             <input type="password" id="password" name="password" required placeholder="Password">
             <button type="submit">login</button>
+            @if ($errors->any())
+            <div class="alert alert-danger">
+            <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+            </ul>
+            </div>
+            @endif
             <br>
             <a href="{{ route('login_alta') }}">
                 <button type="button" class="btn btn-primary btn-sm">Registrar</button>

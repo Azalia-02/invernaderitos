@@ -1,6 +1,16 @@
 #encabezado{
     background-color: rgb(255, 255, 255);
+    text-align: center;
     
+}
+
+#encabezado h1{
+  margin: 0;
+  font-size: 24px;
+}
+
+#encabezado p{
+  font-size: 14px;
 }
 
 .table{
@@ -17,7 +27,7 @@
   margin: 0px;
 }
 body{
-    background: rgb(221, 208, 242);
+    background: rgb(209, 227, 211);
     
 }
 
@@ -36,18 +46,23 @@ h5{
   }
 
 #imgenbn{
-    width: 150px;
-    height: 125px;
+    width: 120px;
+    height: 100px;
     float: inline-start;
 }
 
+.logout-form{
+  margin: 0;
+  width: fit-content;
+}
 
 .menu ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #ffffff;
+    background-color: rgb(255, 255, 255);
+    height: 100px;
   }
   
   .menu li {
@@ -61,14 +76,36 @@ h5{
     text-shadow: #000000;
     font-size: 18px;
     text-align: center;
-    padding: 55px 55px;
+    padding: 40px 40px;
     text-decoration: none;
   }
   
   .menu li a:hover, .desp:hover .btn {
     background-color: rgb(255, 255, 255);
-    background: rgb(199,177,233);
+    background: rgb(97,196,168);
   }
+
+  .menu li a.active {
+    background: rgb(97, 196, 168);
+  }
+
+  .cierre {
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    width: 120px;
+    height: 100px;
+}
+
+.cierre:hover {
+    background-color: rgb(97, 196, 168);  
+    color: #000000;
+}
   
   .menu li.desp {
     display: inline-block;
@@ -77,9 +114,11 @@ h5{
   .cont_cj {
     display: none;
     position: absolute;
+    top: 100%;
+    left: 0;
     background-color: #f9f9f9;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(255, 107, 255, 0.541);
+    box-shadow: 0px 8px 16px 0px rgb(207, 202, 202);
     z-index: 1;
   }
   
@@ -120,6 +159,7 @@ form label {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
 }
+form input[type="input"],
 form input[type="text"],
 form input[type="email"],
 form input[type="password"] {
@@ -129,6 +169,23 @@ form input[type="password"] {
     border: 2px solid #ccc;
     border-radius: 7px;
 }
+
+textarea{
+  width: 100%;
+  padding: 11px;
+  margin-bottom: 11px;
+  border: 2px solid #ccc;
+  border-radius: 7px;
+}
+
+select{
+  width: 100%;
+    padding: 11px;
+    margin-bottom: 11px;
+    border: 2px solid #ccc;
+    border-radius: 7px;
+}
+
 form button {
     width: 100%;
     padding: 11px;
@@ -186,7 +243,7 @@ form button {
 
 form button:hover {
     background-color: rgb(255, 255, 255);
-    background: rgb(30,15,54);
+    background: rgb(59,161,125);
     color: rgb(255, 255, 255);
 }
 #google{
@@ -203,3 +260,4 @@ form button:hover {
   display: flex;
   align-content: center;
 }
+

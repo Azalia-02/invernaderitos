@@ -4,17 +4,19 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href=" {{ asset('css/estilos.css') }}">
-        <title>Lista de Personal</title>
+        <title>Lista de Herramientas</title>
         
 
         <body>
         <div id="encabezado">
-        <a href="{{ route('personal_alta') }}">
         <img src="{{ 'img/dino.jpg' }}" alt="logo empresa" id="imgenbn">
         </a>
         <nav class="menu">
             <ul>
-                <li><a href="desc.php"> Cerrar Cesión </a></li>	
+                <li><form action="{{ route('logout') }}" method="POST" class="logout-form">
+            @csrf
+            <button type="submit" class="cierre">Cerrar sesión</button>
+          </form></li>	
                 <center>
                 <li> <a href="">Bienvenido:  </a></li>   
                 </center>
@@ -37,11 +39,11 @@
 <div class="container">
     <br><br>
     <br>
-    <h3>Administración de registro de personal</h3>
+    <h3>Administración de registro de herramientas</h3>
     <h5>Tabla de registro</h5>
     <hr>
     <p style="text-align: right;">
-        <a href="{{ route('personal_alta') }}">
+        <a href="{{ route('herramienta_alta') }}">
             <button type="button" class="boton">Nuevo Registro</button>
 </a>
 </p>
@@ -51,24 +53,24 @@
         <th>Foto</th>
         <th>N°</th>
         <th>Nombre</th>
-        <th>Apellido</th>
+        <th>Descripción</th>
         <th>Editar</th>
         <th>Eliminar</th>
     
 </tr>
-@foreach($personal as $personales)
+@foreach($herramientas as $herramienta)
 <tr>
-    <td><img src="{{ 'img/' . $personales->foto }}" style="width: 30px; height: 30px;"></td>
-    <td>{{ $personales->id_personal }}</td>
-    <td>{{ $personales->nombre }}</td>
-    <td>{{ $personales->app }}</td>
-    <td><a href="{{ route('personal_editar', $personales->id_personal) }}">
+    <td><img src="{{ 'img/' . $herramienta->imagen }}" style="width: 30px; height: 30px;"></td>
+    <td>{{ $herramienta->id_herramienta }}</td>
+    <td>{{ $herramienta->nombre }}</td>
+    <td>{{ $herramienta->descripcion }}</td>
+    <td><a href="{{ route('herramienta_editar', $herramienta->id_herramienta) }}">
             <button type="button" class="boton2">Editar</button>
 </a></td>
-<td><a href="{{ route('personal_borrar', $personales->id_personal) }}">
+<td><a href="{{ route('herramienta_borrar', $herramienta->id_herramienta) }}">
             <button type="button" class="boton2">Eliminar</button>
 </a></td>
-<td><a href="{{ route('personal_detalle', $personales->id_personal) }}">
+<td><a href="{{ route('herramienta_detalle', $herramienta->id_herramienta) }}">
             <button type="button" class="boton2">Consultar</button>
 </a></td>
 </tr>

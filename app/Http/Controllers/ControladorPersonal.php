@@ -7,10 +7,10 @@ use App\Models\Personal;
 
 class ControladorPersonal extends Controller
 {
-    public function personal(){
+    public function personal(Request $request){
 
-        return view('personal')
-        ->with(['personal' => Personal::all()]);
+        $personal = Personal::Buscar($request->buscar)->paginate(5);
+        return view('personal', compact('personal'));
     }
 
     public function personal_alta(){
@@ -94,7 +94,7 @@ class ControladorPersonal extends Controller
             $img2 = $id->foto;
         }
     
-        // Actualizar el alumno
+        // Actualizar el personal
         $id->update([
             'nombre' => $request->input('nombre'),
             'app' => $request->input('app'),

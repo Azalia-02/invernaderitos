@@ -4,10 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Contracts\Auth\Authenticatable; 
+use Illuminate\Auth\Authenticatable as AuthenticatableTrait;  
 
-class Login extends Model
+class Login extends Model implements Authenticatable
 {
-    use HasFactory;
+    use HasFactory, AuthenticatableTrait; 
+
     protected $table = 'tb_login';
     protected $primaryKey = 'id';
     protected $fillable =  [
@@ -15,5 +18,6 @@ class Login extends Model
         'apellido',
         'email',
         'password',
+        'rol',
     ];
 }

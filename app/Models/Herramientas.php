@@ -5,21 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Personal extends Model
+class Herramientas extends Model
 {
     use HasFactory;
-    protected $table = 'tb_personal';
-    protected $primaryKey = 'id_personal';
+    protected $table = 'tb_herramienta';
+    protected $primaryKey = 'id_herramienta';
     protected $fillable =  [
         'nombre',
-        'app',
-        'apm',
-        'telefono',
-        'email',
-        'curp',
-        'rfc',
-        'cargo',
-        'foto',
+        'descripcion',
+        'precio',
+        'stock',
+        'imagen',
     ];
 
     public function scopeBuscar($query, $buscar){
@@ -27,7 +23,7 @@ class Personal extends Model
         if(trim($buscar) != "") {
             //$query->where('nombre', $buscar);
             //$query->where(\DB::raw("CONCAT(nombre, '',correo, '', rol)"), $buscar);
-            $query->where(\DB::raw("CONCAT(nombre, '', telefono, '', cargo)"), "LIKE", "%$buscar%");
+            $query->where(\DB::raw("CONCAT(nombre, '', descripcion, '', precio)"), "LIKE", "%$buscar%");
         }
     }
 

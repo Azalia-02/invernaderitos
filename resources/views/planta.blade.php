@@ -4,12 +4,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href=" {{ asset('css/estilos.css') }}">
-        <title>Lista de Personal</title>
+        <title>Lista de Plantas</title>
         
 
         <body>
         <div id="encabezado">
-        <a href="{{ route('personal_alta') }}">
         <img src="{{ 'img/dino.jpg' }}" alt="logo empresa" id="imgenbn">
         </a>
         <nav class="menu">
@@ -37,11 +36,11 @@
 <div class="container">
     <br><br>
     <br>
-    <h3>Administración de registro de personal</h3>
+    <h3>Administración de registro de plantas</h3>
     <h5>Tabla de registro</h5>
     <hr>
     <p style="text-align: right;">
-        <a href="{{ route('personal_alta') }}">
+        <a href="{{ route('planta_alta') }}">
             <button type="button" class="boton">Nuevo Registro</button>
 </a>
 </p>
@@ -51,24 +50,24 @@
         <th>Foto</th>
         <th>N°</th>
         <th>Nombre</th>
-        <th>Apellido</th>
+        <th>Tipo</th>
         <th>Editar</th>
         <th>Eliminar</th>
     
 </tr>
-@foreach($personal as $personales)
+@foreach($planta as $plantas)
 <tr>
-    <td><img src="{{ 'img/' . $personales->foto }}" style="width: 30px; height: 30px;"></td>
-    <td>{{ $personales->id_personal }}</td>
-    <td>{{ $personales->nombre }}</td>
-    <td>{{ $personales->app }}</td>
-    <td><a href="{{ route('personal_editar', $personales->id_personal) }}">
+    <td><img src="{{ 'img/' . $plantas->imagen }}" style="width: 30px; height: 30px;"></td>
+    <td>{{ $plantas->id_planta }}</td>
+    <td>{{ $plantas->nombre }}</td>
+    <td>{{ $plantas->tipo }}</td>
+    <td><a href="{{ route('planta_editar', $plantas->id_planta) }}">
             <button type="button" class="boton2">Editar</button>
 </a></td>
-<td><a href="{{ route('personal_borrar', $personales->id_personal) }}">
+<td><a href="{{ route('planta_borrar', $plantas->id_planta) }}">
             <button type="button" class="boton2">Eliminar</button>
 </a></td>
-<td><a href="{{ route('personal_detalle', $personales->id_personal) }}">
+<td><a href="{{ route('planta_detalle', $plantas->id_planta) }}">
             <button type="button" class="boton2">Consultar</button>
 </a></td>
 </tr>
