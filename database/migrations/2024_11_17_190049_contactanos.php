@@ -15,8 +15,8 @@ return new class extends Migration
         Schema::create('tb_contactanos', function (Blueprint $table) {
             $table->bigIncrements('id_contactanos');
             $table->string('nombre');
-            $table->string('apellido');
             $table->string('email', 20);
+            $table->string('asunto');
             $table->text('mensaje');
             $table->timestamps();
             });
