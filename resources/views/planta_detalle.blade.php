@@ -9,6 +9,7 @@
 
         <body>
 <h1>Detalles de la Planta</h1>
+<center>
     <p><strong>ID:</strong> {{ $planta->id_planta }}</p>
     <p><strong>Nombre:</strong> {{ $planta->nombre }}</p>
     <p><strong>Tipo:</strong> {{ $planta->tipo }}</p>
@@ -17,5 +18,10 @@
     <p><strong>Stock:</strong> {{ $planta->stock }}</p>
     <p><strong>Imagen:</strong></p>
     <img src="{{ url('img/'.$planta->imagen) }}" alt="Imagen de la planta" style="width: 150px;">
+    <hr>
+    <a href="{{ route('planta') }}">
+<button type="button" class="btn btn-danger">Regresar</button>
+</a>
+    </center>
     </body>
     </html>

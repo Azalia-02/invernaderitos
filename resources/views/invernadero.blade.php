@@ -5,15 +5,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href=" {{ asset('css/estilos.css') }}">
         <title>Lista de Invernaderos</title>
-        <script src="{{url('js/bootstrap.bundle.min.js')}}"></script></head>
+        </head>
 
         <body>
         <div id="encabezado">
-        <img src="{{ 'img/dino.jpg' }}" alt="logo empresa" id="imgenbn">
-        </a>
+        <a href="{{ route('panel_admin') }}">
+        <img src="{{ 'img/dino.jpg' }}" alt="logo empresa" id="imgenbn"></img>
         <nav class="menu">
             <ul>
-                <li><a href="desc.php"> Cerrar Cesión </a></li>	
+                <li><form action="{{ route('logout') }}" method="POST" class="logout-form">
+                @csrf
+                <button type="submit" class="cierre">Cerrar sesión</button>
+                </form>
+                </li>	
                 <center>
                 <li> <a href="">Bienvenido:  </a></li>   
                 </center>

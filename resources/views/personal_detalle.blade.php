@@ -9,6 +9,7 @@
 
         <body>
 <h1>Detalles del Personal</h1>
+<center>
     <p><strong>ID:</strong> {{ $personal->id_personal }}</p>
     <p><strong>Nombre:</strong> {{ $personal->nombre }}</p>
     <p><strong>Apellido Paterno:</strong> {{ $personal->app }}</p>
@@ -20,5 +21,10 @@
     <p><strong>Cargo:</strong> {{ $personal->cargo }}</p>
     <p><strong>Foto:</strong></p>
     <img src="{{ url('img/'.$personal->foto) }}" alt="Foto del personal" style="width: 150px;">
+    <hr>
+    <a href="{{ route('personal') }}">
+<button type="button" class="btn btn-danger">Regresar</button>
+</a>
+    </center>
     </body>
     </html>

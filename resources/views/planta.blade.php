@@ -9,6 +9,7 @@
 
         <body>
         <div id="encabezado">
+        <a href="{{ route('panel_admin') }}">
         <img src="{{ 'img/dino.jpg' }}" alt="logo empresa" id="imgenbn">
         </a>
         <nav class="menu">
@@ -34,7 +35,18 @@
     <br>
         <div style=" float: inline-start; position: relative;  width: 100%; height: 250px; padding: 2px;">
 <div class="container">
-    <br><br>
+<form action="{{ route('planta') }}" method="GET" enctype="multipart/form-data">
+            {{ csrf_field() }}
+            <div class="form-floating mb-3">
+                <input type="input" class="form-control" name="buscar" value="{{ old('buscar') }}" id="floatingBuscar" 
+                    placeholder="ejemplo: Flor de cerezo" aria-describedby="buscarHelp">
+                <div id="buscarHelp" class="form-text">@if($errors->first('buscar')) <i>El campo Buscar no es correcto!!!</i> @endif</div>
+            </div>
+            <button type="submit" class="btn btn-primary">Buscar</button>
+            <a href="{{ route('planta') }}">
+                <button type="button" class="btn btn-danger">Reiniciar</button>
+            </a>
+        </form>
     <br>
     <h3>Administración de registro de plantas</h3>
     <h5>Tabla de registro</h5>

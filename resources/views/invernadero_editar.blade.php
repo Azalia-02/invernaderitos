@@ -8,6 +8,8 @@
         
 
         <body>
+        <h1>Editar Invernadero</h1>
+        <center>
 <form action="{{ route('invernadero_actualizar', $invernadero->id_invernadero) }}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('PUT')
@@ -30,7 +32,10 @@
         <img src="{{ asset('storage_path/'.$invernadero->imagen) }}" style="width: 30px; height: 30px;">
     </div>
     <button type="submit">Actualizar</button>
-   
+    <a href="{{ route('invernadero') }}">
+<button type="button" class="btn btn-danger">Cancelar</button>
+</a>
 </form>
+</center>
 </body>
 </html>

@@ -9,6 +9,7 @@
 
         <body>
 <h1>Detalles de la herramienta</h1>
+<center>
     <p><strong>ID:</strong> {{ $herramientas->id_herramienta }}</p>
     <p><strong>Nombre:</strong> {{ $herramientas->nombre }}</p>
     <p><strong>Descripción:</strong> {{ $herramientas->descripcion }}</p>
@@ -16,5 +17,10 @@
     <p><strong>Stock:</strong> {{ $herramientas->stock }}</p>
     <p><strong>Imagen:</strong></p>
     <img src="{{ url('img/'.$herramientas->imagen) }}" alt="Imagen de la herramienta" style="width: 150px;">
+    <hr>
+    <a href="{{ route('herramientas') }}">
+<button type="button" class="btn btn-danger">Regresar</button>
+</a>
+    </center>
     </body>
     </html>

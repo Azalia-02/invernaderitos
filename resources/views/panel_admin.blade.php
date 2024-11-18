@@ -17,7 +17,7 @@
             <button type="submit" class="cierre">Cerrar sesión</button>
           </form>
         </li>  
-        <li><a href="#" class="bienvenido">Bienvenido:</a></li>
+        <li><a href="#">Bienvenido:</a></li>
       </ul>
     </nav>
   </div>

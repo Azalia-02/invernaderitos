@@ -13,8 +13,6 @@
   font-size: 14px;
 }
 
-
-
 body{
     background: rgb(209, 227, 211);
     font-family: Arial, sans-serif;
@@ -27,7 +25,7 @@ body{
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: rgb(255, 255, 255);
+    background-color: #ffffff;
     height: 100px;
   }
   
@@ -38,10 +36,25 @@ body{
   .menu li a:hover, .desp:hover .btn {
     background-color: rgb(255, 255, 255);
     background: rgb(97,196,168);
+    text-decoration: none;
   }
 
   .menu li a.active {
     background: rgb(97,196,168);
+  }
+
+  .menu li a{
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    width: 120px;
+    height: 80px;
+    text-decoration: none;
   }
 
   /* Carrusel de imágenes dentro de tarjetas */
@@ -166,24 +179,6 @@ body{
 }
 
 .cierre:hover {
-    background-color: rgb(97, 196, 168);  
-    color: #000000;
-}
-
-.bienvenido {
-    background-color: #ffffff;
-    color: #000000;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    text-align: center;
-    display: inline-flex;
-    align-items: center;
-    width: 120px;
-    height: 100px;
-}
-
-.bienvenido:hover {
     background-color: rgb(97, 196, 168);  
     color: #000000;
 }

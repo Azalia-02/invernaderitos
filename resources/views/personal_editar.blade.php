@@ -8,6 +8,8 @@
         
 
         <body>
+        <h1>Editar Personal</h1>
+        <center>
 <form action="{{ route('personal_actualizar', $personal->id_personal) }}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('PUT')
@@ -50,7 +52,10 @@
         <img src="{{ asset('storage_path/'.$personal->foto) }}" style="width: 30px; height: 30px;">
     </div>
     <button type="submit">Actualizar</button>
-   
+    <a href="{{ route('personal') }}">
+<button type="button" class="btn btn-danger">Cancelar</button>
+</a>
 </form>
+</center>
 </body>
 </html>

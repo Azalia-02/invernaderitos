@@ -8,7 +8,7 @@
     </head>
 <body>
     <div id="encabezado">
-        <a href="{{ route('login') }}">
+        <a href="{{ route('home') }}">
         <img src="{{ asset('img/dino.jpg') }}" alt="logo empresa" id="imgenbn">
         </a>
         <nav class="menu">
@@ -38,7 +38,6 @@
             </ul>
             </div>
             @endif
-            <br>
             <a href="{{ route('login_alta') }}">
                 <button type="button" class="btn btn-primary btn-sm">Registrar</button>
                 </a>
