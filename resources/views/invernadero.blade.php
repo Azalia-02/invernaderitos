@@ -4,20 +4,20 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href=" {{ asset('css/estilos.css') }}">
-        <title>Lista de Invernaderos</title>
-        </head>
+        <title>Lista de invernadero</title>
+        
 
         <body>
         <div id="encabezado">
         <a href="{{ route('panel_admin') }}">
-        <img src="{{ 'img/dino.jpg' }}" alt="logo empresa" id="imgenbn"></img>
+        <img src="{{ 'img/dino.jpg' }}" alt="logo empresa" id="imgenbn">
+        </a>
         <nav class="menu">
             <ul>
-                <li><form action="{{ route('logout') }}" method="POST" class="logout-form">
-                @csrf
-                <button type="submit" class="cierre">Cerrar sesión</button>
-                </form>
-                </li>	
+                <li><form action="{{ route('logout') }}" method="POST" class="cierre">
+                    @csrf
+                    <button type="submit" class="cierre">Cerrar sesión</button>
+                </form></li>	
                 <center>
                 <li> <a href="">Bienvenido:  </a></li>   
                 </center>
@@ -38,12 +38,11 @@
     <br>
         <div style=" float: inline-start; position: relative;  width: 100%; height: 250px; padding: 2px;">
 <div class="container">
-    
-    <form action="{{ route('invernadero') }}" method="GET" enctype="multipart/form-data">
+<form action="{{ route('invernadero') }}" method="GET" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="form-floating mb-3">
                 <input type="input" class="form-control" name="buscar" value="{{ old('buscar') }}" id="floatingBuscar" 
-                    placeholder="ejemplo: Invernadero túnel" aria-describedby="buscarHelp">
+                    placeholder="ejemplo: Flor de cerezo" aria-describedby="buscarHelp">
                 <div id="buscarHelp" class="form-text">@if($errors->first('buscar')) <i>El campo Buscar no es correcto!!!</i> @endif</div>
             </div>
             <button type="submit" class="btn btn-primary">Buscar</button>
@@ -51,7 +50,7 @@
                 <button type="button" class="btn btn-danger">Reiniciar</button>
             </a>
         </form>
-        <br>
+    <br>
     <h3>Administración de registro de invernaderos</h3>
     <h5>Tabla de registro</h5>
     <hr>
@@ -60,7 +59,7 @@
             <button type="button" class="boton">Nuevo Registro</button>
 </a>
 </p>
-
+<hr><br>
 <table class="table">
     <tr>
         <th>Foto</th>
@@ -77,7 +76,6 @@
     <td>{{ $invernaderos->id_invernadero }}</td>
     <td>{{ $invernaderos->tipo }}</td>
     <td>{{ $invernaderos->descripcion }}</td>
-    
     <td><a href="{{ route('invernadero_editar', $invernaderos->id_invernadero) }}">
             <button type="button" class="boton2">Editar</button>
 </a></td>

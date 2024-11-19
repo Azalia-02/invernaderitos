@@ -14,7 +14,10 @@
         </a>
         <nav class="menu">
             <ul>
-                <li><a href="desc.php"> Cerrar Cesión </a></li>	
+                <li><form action="{{ route('logout') }}" method="POST" class="cierre">
+                    @csrf
+                    <button type="submit" class="cierre">Cerrar sesión</button>
+                </form></li>	
                 <center>
                 <li> <a href="">Bienvenido:  </a></li>   
                 </center>
@@ -67,7 +70,7 @@
         <th>Eliminar</th>
     
 </tr>
-@foreach($planta as $plantas)
+@foreach($planta as $key=>$plantas)
 <tr>
     <td><img src="{{ 'img/' . $plantas->imagen }}" style="width: 30px; height: 30px;"></td>
     <td>{{ $plantas->id_planta }}</td>

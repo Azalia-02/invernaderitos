@@ -52,10 +52,24 @@ h5{
   float: inline-start;
 }
 
-.logout-form{
-margin: 0;
-width: fit-content;
+.cierre {
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  width: 120px;
+  height: 100px;
 }
+
+.cierre:hover {
+  background-color: rgb(97, 196, 168);  
+  color: #000000;
+}
+
 .menu ul {
   list-style-type: none;
   margin: 0;
@@ -86,7 +100,7 @@ width: fit-content;
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(255, 107, 255, 0.541);
+  box-shadow: 0px 8px 16px 0px rgba(144, 144, 144, 0.541);
   z-index: 1;
 }
 
@@ -246,4 +260,22 @@ align-content: center;
 
 strong{
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.cierre{
+  background-color: #ffffff;
+    color: #000000;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    width: 120px;
+    height: 80px;
+}
+
+.cierre:hover {
+  background-color: rgb(97, 196, 168);  
+  color: #000000;
 }
