@@ -108,9 +108,9 @@ class ControladorLogin extends Controller
             case 'admin':
                 return redirect()->route('panel_admin');
                 case 'usuario':
-                    return redirect()->route('herramientas');
+                    return redirect()->route('home_user');
                     default:
-                    return redirect()->route('herramientas');
+                    return redirect()->route('home_user');
         }
     }
 }
